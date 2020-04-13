@@ -33,8 +33,8 @@ A docker-compose.yml looks like this:
         - "3000:3000"
       environment:
         - CHANGE_OWNER=0     # Set the value to 1 to change ownership of workspace folder
-        - USER_ID=5000       # set user id for workspace folder
-        - GROUP_ID=5000      # set group id for workspace folder
+        - USERID=5000        # set user id; ${USERID:-id -u}
+        - GROUPID=5000       # set group id; ${GROUPID:-id -u}
       volumes:
         - .:/workspace
 
@@ -42,8 +42,8 @@ A docker-compose.yml looks like this:
 - CHANGE_OWNER
 This variable is optional and specifies whether to change the ownership of workspace folder
 
-- USER_ID
+- USERID
 This variable is optional and specifies whether to set user id for workspace folder
 
-- GROUP_ID
+- GROUPID
 This variable is optional and specifies whether to set group id for workspace folder
